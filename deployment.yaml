@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: my-local-worker
+  labels: 
+    app: initial-worker-app 
+
+spec: 
+  replicas: 1  
+  selector: 
+    matchLabels: 
+     app: qewrqwer
+  template: 
+    metadata:
+      name: my-worker-pod
+      labels: 
+        app: asdfasdf  
+    spec: 
+      containers: 
+      - name: my-worker
+        image: worker:v1
+        ports: 
+        - containerPort: 8765
+        imagePullPolicy: Never
+      - name: my-initial
+        image: inital:v1
+        ports: 
+        - containerPort: 9876
+        imagePullPolicy: Never
+

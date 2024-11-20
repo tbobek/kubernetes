@@ -1,0 +1,10 @@
+services: 
+  initial: 
+    build: initial 
+    expose: 
+      - 9876:9876
+  worker: 
+    build: worker
+
+
+
