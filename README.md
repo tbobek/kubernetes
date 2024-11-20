@@ -1,4 +1,4 @@
-# README
+# README:
 
 This setup has been created to get an understanding of kubernetes.  I started
 with the "Hello Minikube" tutorial at
@@ -24,7 +24,9 @@ duplicated in situations of high load.
 Starting the two container without kubernetes: 
 
 `docker build -t worker:v1 . ` similar for the `initial` image. 
+
 `docker run -d -p 9876:9876 --name initial-container initial`
+
 `docker run -d -p 8765:8765 --name worker-container worker`
 
 ### Running
@@ -32,6 +34,9 @@ Starting the two container without kubernetes:
 Curl command to the initial container to start the calculation: 
 
 `curl localhost:9876 -d '{ "calls" : 3, "iterations" : 5, "wait_time" : 123 }'`
+
+Of course, the two container can also be started with a 
+`docker-compose up -d` command, using the `docker-compose.yml` file. 
 
 ### Hints
 
